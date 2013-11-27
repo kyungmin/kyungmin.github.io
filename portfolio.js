@@ -35,8 +35,41 @@ if (Meteor.isClient) {
   });
 
   Template.tags.events({
-    'click .tag' : function () {
-      console.log(this);
+    'click .tag' : function (event) {
+      var count = 0;
+      $(".project-box").each(function () {
+        $(this).children(".meta").children(".tag").each(function (index, elem) {
+          if($(event.target).text() == $(elem).text()) {
+            count += 1;
+          }
+        });
+        if (count == 0) {
+          $(this).hide();
+        } else {
+          $(this).show();
+        }
+        count = 0;
+      });
+    }
+  });
+
+  Template.tags_menu.events({
+    'click .tag' : function (event) {
+      console.log("click");
+      var count = 0;
+      $(".project-box").each(function () {
+        $(this).children(".meta").children(".tag").each(function (index, elem) {
+          if($(event.target).text() == $(elem).text()) {
+            count += 1;
+          }
+        });
+        if (count == 0) {
+          $(this).hide();
+        } else {
+          $(this).show();
+        }
+        count = 0;
+      });
     }
   });
 
@@ -50,18 +83,25 @@ if (Meteor.isClient) {
         $(".small-header").addClass('sticky');
         $(".h1").removeClass("hidden").addClass("shown");
         // TODO: animate instead of hiding abruptly
-        $(".content").css({ marginTop: (smallHeaderHeight + 40) + "px" });
+        $(".content").css({ paddingTop: smallHeaderHeight + 40 + "px" });
       } else if ($(window).scrollTop() <= smallHeaderTop) {
         $(".small-header").removeClass('sticky');
-        $(".content").css({ marginTop: "40px" });
+        $(".content").css({ paddingTop: "40px" });
         $(".h1").removeClass("shown").addClass("hidden");
       }
     });
   });
 
-  $(".small-header > .tag").each(function() {
+  $(".small-header > .tag").each(function () {
     var rightEdge = parseInt($(this).css("width")) + $(this).offset().left;
     console.log(rightEdge);
+    var more = $("<div class='tag'><ul></ul></div>");
+    if (rightEdge > $(window).width() - 250) {
+      console.log("it happened");
+      $(this).hide();
+      more.addChild("<li>" + $(this).text() + "</li>");
+      $(".small-header").addChild(more);
+    }
   });
 }
 
