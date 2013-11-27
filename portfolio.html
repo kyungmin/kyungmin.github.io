@@ -1,0 +1,57 @@
+<head>
+  <title>Kyungmin Kim</title>
+</head>
+
+<body>
+  <div id="hire-kk">Hire KK</div>
+  <div class="big-header">
+    <div class="intro-box">
+      <h1>Kyungmin Kim</h1>
+      <p>Hi, I'm KK. I'm a designer in San Francisco. Previously, I was a UX designer at Google for almost 4 years, focusing on enterprise products like DoubleClick and Google Cloud Console. Now I build apps with Ruby on Rails and JavaScript.</p>
+    </div>
+    <div class="social">
+      <div class="social-icon linkedin"></div>
+      <div class="social-icon github"></div>
+      <div class="social-icon tumblr"></div>
+      <div class="social-icon medium"></div>
+      <div class="social-icon instagram"></div>
+      <div class="social-icon twitter"></div>
+    </div>
+  </div>
+  <div class="small-header">
+    <div class="h1 hidden">Kyungmin Kim</div>
+    {{> tags_menu}}
+  </div>
+  <div class="content">
+   {{> posts}}
+  </div>
+  <div class="footer">
+   Kyungmin Kim © 2013. Powered by <a href="http://www.meteor.com">Meteor</a>.
+  </div>
+</body>
+
+<template name="posts">
+{{#each posts}}
+  <div class="project-box">
+    <img class="img" src="{{img}}"></img>
+    <h2>{{title}}</h2>
+    <p class="desc">{{desc}}</p>
+    <div class="meta">
+      {{> tags}}
+      <span class="date">{{date}}</span>
+    </div>
+  </div>
+{{/each}}
+</template>
+
+<template name="tags">
+{{#each tags}}
+  <span class="tag">#{{tag}}</span>
+{{/each}}
+</template>
+
+<template name="tags_menu">
+{{#each tags}}
+  <div class="tag">{{tag}}</div>
+{{/each}}
+</template>

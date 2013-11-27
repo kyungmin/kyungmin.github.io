@@ -1,0 +1,239 @@
+@import "/packages/bootstrap3-less/bootstrap.lessimport";
+@light-red: #FF6767;
+@dark-red: #DF5050;
+@light-grey: #f6f6f6;
+
+body {
+  margin-top: -10px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  background-color: @light-grey;
+  font-size: 13px;
+  min-width: 300px;
+}
+
+/* header */
+.big-header {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: @light-red;
+  color: #fff;
+  z-index: 99;
+}
+
+.small-header {
+  width: 100%;
+  height: 50px;
+  background-color: @dark-red;
+  color: #fff;
+  box-shadow: 0px 2px 0px darken(@dark-red, 10%);
+
+  & .h1 {
+    font-family: 'Klavika Light';
+    font-size: 22px;
+    text-shadow: 0px 1px 0px #888;
+    line-height: 0.7;
+    margin: 19px 40px 0;
+    display: inline-block;
+    width: 180px;
+    float: left;
+  }
+
+  & .tag {
+    display: inline-block;
+    height: 100%;
+    padding: 15px 20px;
+    margin-right: -3px;
+    font-size: 16px;
+  }
+
+  & .tag:hover {
+    background-color: darken(@dark-red, 5%);
+    cursor: pointer;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+
+#hire-kk {
+  font-family: 'Arial';
+  position: fixed;
+  right: -45px;
+  top: 28px;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  background-color: #fff;
+  overflow: hidden;
+  color: #444;
+  margin: 5px 0;
+  padding: 8px 70px;
+  text-align: center;
+  font-weight: 600;
+  display: block;
+  border: 1px solid #bbb;
+  box-shadow: 0 2px 2px #999;
+  text-shadow: 0px 0px 4px #f7f7f7;
+  z-index: 100;
+}
+
+#hire-kk:hover {
+  cursor: pointer;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.intro-box {
+  width: 50%;
+  min-width: 375px;
+  margin: 60px auto 30px;
+  padding: 40px 50px;
+  background-color: @dark-red;
+  box-shadow: 0 3px 0 darken(@dark-red, 5%);
+
+  & h1 {
+    font-family: 'Klavika Light';
+    font-size: 28px;
+    text-shadow: 0px 1px 0px #888;
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 0;
+  }
+
+  & p {
+    line-height: 1.8;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 100;
+  }
+}
+
+.social {
+  margin: 0px auto 30px;
+  align: center;
+  width: 375px;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  background-color: darken(@dark-red, 5%);
+  
+  &:hover {
+    background-color: darken(@dark-red, 10%);
+    cursor: pointer;
+    -webkit-animation: float 500ms ease-out alternate infinite;
+  }
+}
+
+@-webkit-keyframes float {
+  from {
+    -webkit-transform: translate(0px, 0px);
+  }
+  to {
+    -webkit-transform: translate(0px, -3px);
+  }
+}
+
+.medium {
+  background-image: url('icons/medium.png');
+}
+
+.linkedin {
+  background-image: url('icons/linkedin.png');
+}
+
+.twitter {
+  background-image: url('icons/twitter.png');
+}
+
+.github {
+  background-image: url('icons/github.png');
+}
+
+.tumblr {
+  background-image: url('icons/tumblr.png');
+}
+
+.instagram {
+  background-image: url('icons/instagram.png');
+}
+
+/* content */
+.content {
+  padding: 40px 40px 0;
+}
+
+.project-box {
+  display: inline-block;
+  width: 30%;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 0 1px #ddd;
+  margin: 0 37px 40px 0;
+
+  img {
+    width: 100%;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  & h2 {
+    font-family: 'Klavika Medium';
+    font-size: 16px;
+    padding-left: 20px;
+  }
+
+  & .desc {
+    padding: 0 20px 10px 20px;
+    color: #444;
+  }
+
+  & .meta {
+    border-top: 1px solid #eee;
+    padding: 10px 20px;
+    margin: 0px;
+    color: #999;
+    font-size: 12px;
+
+    & .tag {
+      color: desaturate(@dark-red, 10%);
+      background-color: spin(lighten(@dark-red, 30%), 40);
+      padding: 1px 8px 2px;
+      border-radius: 10px;
+    }
+
+    & .tag:hover {
+      cursor: pointer;
+      background-color: spin(lighten(@dark-red, 30%), 30);
+    }
+
+    & .date {
+      float: right;
+    }
+  }
+}
+
+.footer {
+  padding: 0 40px 40px;
+  font-size: 12px;
+  color: #777;
+}
+
+/* misc */
+.hidden{
+    visibility: hidden;
+}
+.shown{
+    visibility: visible;
+}
