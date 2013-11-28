@@ -10,11 +10,11 @@
       <p>Hi, I'm KK. I live in San Francisco. Previously, I was a UX designer at Google for almost 4 years, focusing on enterprise products like DoubleClick and Google Cloud Console. Now I build apps with Ruby on Rails and JavaScript.</p>
     </div>
     <div class="social">
-      <div class="social-icon linkedin"></div>
-      <div class="social-icon github"></div>
-      <div class="social-icon tumblr"></div>
-      <div class="social-icon medium"></div>
-      <div class="social-icon instagram"></div>
+      <a href="http://instagram.com/kyungminkk" target="_blank"><div class="social-icon linkedin"></div></a>
+      <a href="http://instagram.com/kyungminkk" target="_blank"><div class="social-icon github"></div></a>
+      <a href="http://instagram.com/kyungminkk" target="_blank"><div class="social-icon tumblr"></div></a>
+      <a href="http://instagram.com/kyungminkk" target="_blank"><div class="social-icon medium"></div></a>
+      <a href="http://instagram.com/kyungminkk" target="_blank"><div class="social-icon instagram"></div></a>
       <div class="social-icon twitter"></div>
     </div>
   </div>
@@ -35,7 +35,7 @@
 <template name="posts">
 {{#each posts}}
   <div class="project-box">
-    <img class="img" src="{{img}}"></img>
+    <a href="{{url}}" target="_blank"><img class="img" src="{{img}}"></img></a>
     <h2>{{title}}</h2>
     <p class="desc">{{desc}}</p>
     <div class="meta">
@@ -53,7 +53,7 @@
 </template>
 
 <template name="tags_menu">
-<div class="tag">All</div>
+<div class="tag selected">All</div>
 {{#each tags}}
   <div class="tag">{{tag}}</div>
 {{/each}}

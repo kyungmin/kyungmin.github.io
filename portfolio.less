@@ -2,6 +2,7 @@
 @light-red: #FF6767;
 @dark-red: #DF5050;
 @light-grey: #f6f6f6;
+@blue: #15c;
 
 body {
   margin-top: -10px;
@@ -44,7 +45,6 @@ body {
   }
 
   & .tag {
-    background-color: @dark-red;
     display: inline-block;
     height: 100%;
     padding: 15px 20px;
@@ -187,6 +187,8 @@ body {
   border: 1px solid #eee;
   box-shadow: 0 0 1px #ddd;
   margin: 0 37px 40px 0;
+  float: left;
+  height: 522px;
 
   img {
     width: 100%;
@@ -208,6 +210,14 @@ body {
     padding: 0 20px 10px 20px;
     color: #444;
   }
+
+  & .github-link {
+    color: desaturate(@blue, 10%);
+    background-color: spin(lighten(@blue, 30%), 40);
+    padding: 1px 8px 2px;
+    border-radius: 10px;
+  }
+
 
   & .meta {
     border-top: 1px solid #eee;
