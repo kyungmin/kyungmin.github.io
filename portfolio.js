@@ -28,6 +28,16 @@ if (Meteor.isClient) {
     return tags;
   };
 
+  Template.tags_menu.rendered = function () {
+    var menuWidth = 0;
+
+    $(".tags_menu > .tag").each(function () {
+      menuWidth += parseInt($(this).css("width"));
+    });
+    $(".tags_menu").width(menuWidth);
+    $(".tags_menu").css("margin", "0 auto");
+  };
+
   Template.posts.events({
     'click .img' : function () {
       console.log(this);
@@ -36,6 +46,9 @@ if (Meteor.isClient) {
 
   Template.tags.events({
     'click .tag' : function (event) {
+      $(".tags_menu > .tag").removeClass('selected');
+      $(".tags_menu > .tag").filter(":contains('" + $(event.target).text() + "')").addClass('selected');
+
       var count = 0;
       $(".project-box").each(function () {
         $(this).children(".meta").children(".tag").each(function (index, elem) {
@@ -55,26 +68,32 @@ if (Meteor.isClient) {
 
   Template.tags_menu.events({
     'click .tag' : function (event) {
-      console.log("click");
-      var count = 0;
-      $(".project-box").each(function () {
-        $(this).children(".meta").children(".tag").each(function (index, elem) {
-          if($(event.target).text() == $(elem).text()) {
-            count += 1;
-          }
-        });
-        if (count == 0) {
-          $(this).hide();
-        } else {
+      $(".tags_menu > .tag").removeClass('selected');
+      $(event.target).addClass('selected');
+      if ($(event.target).text() == "All") {
+        $(".project-box").each(function () {
           $(this).show();
-        }
-        count = 0;
-      });
+        });
+      } else {
+        var count = 0;
+        $(".project-box").each(function () {
+          $(this).children(".meta").children(".tag").each(function (index, elem) {
+            if($(event.target).text() == $(elem).text()) {
+              count += 1;
+            }
+          });
+          if (count == 0) {
+            $(this).hide();
+          } else {
+            $(this).show();
+          }
+          count = 0;
+        });
+      }
     }
   });
 
-  $(document).ready(function(){
-    var bigHeaderHeight = parseInt($(".big-header").css("height"));
+  Meteor.startup(function () {
     var smallHeaderHeight = parseInt($(".small-header").css("height"));
     var smallHeaderTop = $(".small-header").offset().top;
 
@@ -90,18 +109,10 @@ if (Meteor.isClient) {
         $(".h1").removeClass("shown").addClass("hidden");
       }
     });
-  });
 
-  $(".small-header > .tag").each(function () {
-    var rightEdge = parseInt($(this).css("width")) + $(this).offset().left;
-    console.log(rightEdge);
-    var more = $("<div class='tag'><ul></ul></div>");
-    if (rightEdge > $(window).width() - 250) {
-      console.log("it happened");
-      $(this).hide();
-      more.addChild("<li>" + $(this).text() + "</li>");
-      $(".small-header").addChild(more);
-    }
+    $(window).resize(function () {
+      // moreDropdown();
+    });
   });
 }
 
@@ -115,7 +126,7 @@ if (Meteor.isServer) {
           url: "http://www.passwordlet.com",
           img: "http://placekitten.com/300/300",
           desc: "Final project at App Academy.",
-          tags: ["Ruby on Rails", "Backbone", "Animate"],
+          tags: ["Ruby on Rails", "Backbone", "Animation"],
           date: "Nov 13, 2013"
         },
         {

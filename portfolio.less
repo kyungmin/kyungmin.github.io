@@ -25,7 +25,8 @@ body {
   height: 50px;
   background-color: @dark-red;
   color: #fff;
-  box-shadow: 0px 2px 0px darken(@dark-red, 10%);
+  box-shadow: 0px 3px 0px darken(@dark-red, 10%);
+  overflow: visible;
 
   & .h1 {
     font-family: 'Klavika Light';
@@ -38,7 +39,12 @@ body {
     float: left;
   }
 
+  & .tags_menu {
+    white-space: nowrap;
+  }
+
   & .tag {
+    background-color: @dark-red;
     display: inline-block;
     height: 100%;
     padding: 15px 20px;
@@ -49,6 +55,10 @@ body {
   & .tag:hover {
     background-color: darken(@dark-red, 5%);
     cursor: pointer;
+  }
+
+  & .tag.selected {
+    background-color: darken(@dark-red, 5%);
   }
 }
 
@@ -73,15 +83,15 @@ body {
   text-align: center;
   font-weight: 600;
   display: block;
-  border: 1px solid #bbb;
-  box-shadow: 0 2px 2px #999;
-  text-shadow: 0px 0px 4px #f7f7f7;
+  border: 2px solid @dark-red;
+  box-shadow: 0 2px 0px @dark-red;
+  text-shadow: 0px 0px 3px #f7f7f7;
   z-index: 100;
 }
 
 #hire-kk:hover {
   cursor: pointer;
-  background-color: #f7f7f7;
+  background-color: #f9f9f9;
   color: #333;
 }
 
@@ -91,7 +101,7 @@ body {
   margin: 60px auto 30px;
   padding: 40px 50px;
   background-color: @dark-red;
-  box-shadow: 0 3px 0 darken(@dark-red, 5%);
+  box-shadow: 0 4px 0 darken(@dark-red, 5%);
 
   & h1 {
     font-family: 'Klavika Light';
