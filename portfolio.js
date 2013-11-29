@@ -1,8 +1,52 @@
 Posts = new Meteor.Collection("posts");
 
 if (Meteor.isClient) {
+
   Template.posts.posts = function () {
     return Posts.find({});
+  };
+
+  Template.posts.first_item = function () {
+    return this.post_id % 3 == 0;
+  };
+
+  Template.posts.very_first_item = function () {
+    return this.post_id == 0;
+  };
+
+  Template.posts.last_item = function () {
+    return this.post_id % 3 == 2;
+  };
+
+  // var postCount = 0;
+  // var row = [];
+  Template.posts.rendered = function () {
+  //   //console.log(postCount);
+  //   if (postCount % 3 == 2) {
+  //     // $(row).wrap("<div class='row'></div>");
+  //     row = [];
+  //   } else {
+  //     row.push(this);
+  //   }
+  //   postCount++;
+
+    // $(".project-box").each(function(index) {
+    //     console.log(index);
+    //   });
+    
+
+    // normalize desc height
+    var maxHeight = 0;
+
+    $(".project-box > .desc").each(function () {
+      if ($(this).height() > maxHeight) {
+        maxHeight = $(this).height(); 
+      }
+    });
+
+    $(".project-box > .desc").each(function () {
+      $(this).height(maxHeight);
+    });
   };
 
   Template.tags.tags = function () {
@@ -49,19 +93,19 @@ if (Meteor.isClient) {
       $(".tags_menu > .tag").removeClass('selected');
       $(".tags_menu > .tag").filter(":contains('" + $(event.target).text() + "')").addClass('selected');
 
-      var count = 0;
+      var tagCount = 0;
       $(".project-box").each(function () {
         $(this).children(".meta").children(".tag").each(function (index, elem) {
           if($(event.target).text() == $(elem).text()) {
-            count += 1;
+            tagCount += 1;
           }
         });
-        if (count == 0) {
+        if (tagCount == 0) {
           $(this).hide();
         } else {
           $(this).show();
         }
-        count = 0;
+        tagCount = 0;
       });
     }
   });
@@ -94,25 +138,47 @@ if (Meteor.isClient) {
   });
 
   Meteor.startup(function () {
-    var smallHeaderHeight = parseInt($(".small-header").css("height"));
-    var smallHeaderTop = $(".small-header").offset().top;
+      $(".small-header > .h1").click(function(event) {
+        $("html, body").animate({scrollTop: 0}, "slow");
+        return false;
+      });
 
-    $(window).scroll(function() {
-      if($(window).scrollTop() > $(".small-header").offset().top) {
-        $(".small-header").addClass('sticky');
-        $(".h1").removeClass("hidden").addClass("shown");
-        // TODO: animate instead of hiding abruptly
-        $(".content").css({ paddingTop: smallHeaderHeight + 40 + "px" });
-      } else if ($(window).scrollTop() <= smallHeaderTop) {
-        $(".small-header").removeClass('sticky');
-        $(".content").css({ paddingTop: "40px" });
-        $(".h1").removeClass("shown").addClass("hidden");
+      var smallHeaderHeight = parseInt($(".small-header").css("height"));
+      var smallHeaderTop = $(".small-header").offset().top;
+
+      $(window).scroll(function() {
+        if($(window).scrollTop() > $(".small-header").offset().top) {
+          $(".small-header").addClass('sticky');
+          $(".h1").removeClass("hidden").addClass("shown");
+          // TODO: animate instead of hiding abruptly
+          $(".content").css({ paddingTop: smallHeaderHeight + 40 + "px" });
+        } else if ($(window).scrollTop() <= smallHeaderTop) {
+          $(".small-header").removeClass('sticky');
+          $(".content").css({ paddingTop: "40px" });
+          $(".h1").removeClass("shown").addClass("hidden");
+        }
+      });
+
+      $(window).resize(function () {
+        // moreDropdown();
+      });
+  });
+
+  Handlebars.registerHelper('forevery', function(context, limit, options) {
+      var ret = "";
+      debugger
+      console.log(context.length);
+      if (context.length > 0) {
+          ret += "<div>";
+          for(var i=0, j=context.length; i<j; i++) {
+            ret = ret + options.fn(context[i]);
+            if ( (i+1) % limit === 0 ) {
+                ret += "</div><div>";
+            }
+          }
+          ret += "</div>";
       }
-    });
-
-    $(window).resize(function () {
-      // moreDropdown();
-    });
+      return ret;
   });
 }
 
@@ -127,7 +193,7 @@ if (Meteor.isServer) {
           img: "images/passwordlet.png",
           desc: "Final project at App Academy for 2 weeks. Passwordlet securely stores user credentials and automatically logs in users with cookies.",
           github: "https://github.com/kyungmin/passwordlet",
-          tags: ["Ruby on Rails", "Postgress", "Backbone", "JavaScript"],
+          tags: ["Ruby on Rails", "Backbone", "jQuery"],
           date: "Nov 13, 2013"
         },
         {
@@ -170,10 +236,12 @@ if (Meteor.isServer) {
 
       for(var i = 0; i < data.length; i++) {
         Posts.insert({
+          post_id: i,
           title: data[i].title,
           url: data[i].url,
           img: data[i].img,
           desc: data[i].desc,
+          github: data[i].github,
           tags: data[i].tags,
           date: data[i].date
         });
