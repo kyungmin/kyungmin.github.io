@@ -202,9 +202,9 @@ if (Meteor.isServer) {
           title: "Governance Toolkit",
           url: "http://goo.gl/gJplG",
           img: "images/governance-toolkit.png",
-          desc: "Prototype to demonstrate an idea to represent complex dataset.",
+          desc: "A prototype to demonstrate how to visualize complex governance dataset.",
           tags: ["jQuery", "CSS"],
-          date: "Sep 24, 2011"
+          date: "Jan 10, 2012"
         }
       ];
 
