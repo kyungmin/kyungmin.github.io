@@ -72,7 +72,7 @@ if (Meteor.isClient) {
 
       var tagCount = 0;
       $(".project-box").each(function () {
-        $(this).children(".meta").children(".tag").each(function (index, elem) {
+        $(this).children(".meta").children(".tags").children(".tag").each(function (index, elem) {
           if($(event.target).text() == $(elem).text()) {
             tagCount += 1;
           }
@@ -81,7 +81,7 @@ if (Meteor.isClient) {
           $(this).parents('.post').removeClass('bounceInUp');
           $(this).parents('.post').addClass('bounceOutDown');
         } else {
-          $(this).parents('.post').removeClass('bounceOutDown')
+          $(this).parents('.post').removeClass('bounceOutDown');
           $(this).parents('.post').addClass('bounceInUp');
         }
         tagCount = 0;
@@ -93,15 +93,16 @@ if (Meteor.isClient) {
     'click .tag' : function (event) {
       $(".tags_menu > .tag").removeClass('selected');
       $(event.target).addClass('selected');
+      
       if ($(event.target).text() == "All") {
         $(".project-box").each(function () {
-          $(this).parents('.post').removeClass('bounceOutDown')
+          $(this).parents('.post').removeClass('bounceOutDown');
           $(this).parents('.post').addClass('bounceInUp');
         });
       } else {
         var tagCount = 0;
         $(".project-box").each(function () {
-          $(this).children(".meta").children(".tag").each(function (index, elem) {
+          $(this).children(".meta").children(".tags").children(".tag").each(function (index, elem) {
             if($(event.target).text() == $(elem).text()) {
               tagCount += 1;
             }
@@ -110,7 +111,7 @@ if (Meteor.isClient) {
             $(this).parents('.post').removeClass('bounceInUp');
             $(this).parents('.post').addClass('bounceOutDown');
           } else {
-            $(this).parents('.post').removeClass('bounceOutDown')
+            $(this).parents('.post').removeClass('bounceOutDown');
             $(this).parents('.post').addClass('bounceInUp');
           }
           tagCount = 0;

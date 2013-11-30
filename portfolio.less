@@ -1,5 +1,5 @@
 @import "packages/bootstrap3-less/bootstrap.lessimport";
-@import "animate.css";
+@import "animate.less";
 
 @light-red: #FF6767;
 @dark-red: #DF5050;
@@ -39,7 +39,7 @@ body {
     margin: 19px 40px 0;
     display: inline-block;
     float: left;
-    width: 150px;
+    width: 50px;
     transition: width 200ms ease-out, font-size 200ms;
     -webkit-transition: width 200ms ease-out, font-size 200ms;
   }
@@ -149,25 +149,16 @@ body {
   &:hover {
     background-color: darken(@dark-red, 10%);
     cursor: pointer;
-    -webkit-animation: float 500ms ease-out alternate infinite;
+    .float(500ms, ease-out, alternate, infinite);    
   }
 
   &:hover:after {
-    color: darken(@dark-red, 20%);
+    color: darken(@dark-red, 15%);
     position: absolute;
     text-align: center;
     font-size: 11px;
     width: 60px;
     margin: 56px auto 0;
-  }
-}
-
-@-webkit-keyframes float {
-  from {
-    -webkit-transform: translate(0px, 0px);
-  }
-  to {
-    -webkit-transform: translate(0px, -3px);
   }
 }
 
@@ -272,16 +263,22 @@ body {
 
   & .meta {
     border-top: 1px solid #eee;
-    padding: 10px 20px;
+    padding: 5px 20px;
     margin: 0px;
     color: #999;
     font-size: 12px;
+
+    & .tags {
+      display: inline-block;
+      margin-right: 60px;
+    }
 
     & .tag {
       color: desaturate(@dark-red, 10%);
       background-color: spin(lighten(@dark-red, 30%), 40);
       padding: 1px 8px 2px;
       border-radius: 10px;
+      line-height: 2;
     }
 
     & .tag:hover {
@@ -292,6 +289,7 @@ body {
     & .date {
       position: absolute;
       right: 40px;
+      bottom: 50px;
     }
   }
 }
