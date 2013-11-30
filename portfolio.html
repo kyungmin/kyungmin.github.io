@@ -3,9 +3,9 @@
 </head>
 
 <body>
-  <a href="mailto:kmin905@gmail.com?Subject=Let's%20talk!" target="_blank"><div id="hire-kk">Hire KK</div></a>
+  <a href="mailto:kmin905@gmail.com?Subject=Hey,%20let's%20talk!" target="_blank"><div id="hire-kk">Hire KK</div></a>
   <div class="big-header">
-    <div class="intro-box">
+    <div class="intro-box animated fadeIn">
       <h1>Kyungmin Kim</h1>
       <p>Hi, I'm KK. I live in San Francisco. Previously, I was a UX designer at Google for almost 4 years, focusing on enterprise products like DoubleClick and Google Cloud Console. Now I build apps with Ruby on Rails and JavaScript.</p>
     </div>
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="small-header">
-    <div class="h1 hidden">Kyungmin Kim</div>
+    <div class="h1 transparent">Kyungmin Kim</div>
     <div class="tags_menu">
       {{> tags_menu}}
     </div>
@@ -37,7 +37,7 @@
   {{#if first_item}}
     <div class="row"></div>
   {{/if}}
-  <div class="post col-md-4 col-sm-12 col-xs-12">
+  <div class="post animated bounceInUp col-md-4 col-sm-12 col-xs-12" data-id="{{post_id}}">
     <div class="project-box">
       <a href="{{url}}" target="_blank"><img class="img" src="{{img}}"></img></a>
       <h2>{{title}}</h2>

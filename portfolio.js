@@ -2,6 +2,8 @@ Posts = new Meteor.Collection("posts");
 
 if (Meteor.isClient) {
 
+  Session.setDefault('post_id', 0);
+
   Template.posts.posts = function () {
     return Posts.find({});
   };
@@ -10,32 +12,7 @@ if (Meteor.isClient) {
     return this.post_id % 3 == 0;
   };
 
-  Template.posts.very_first_item = function () {
-    return this.post_id == 0;
-  };
-
-  Template.posts.last_item = function () {
-    return this.post_id % 3 == 2;
-  };
-
-  // var postCount = 0;
-  // var row = [];
   Template.posts.rendered = function () {
-  //   //console.log(postCount);
-  //   if (postCount % 3 == 2) {
-  //     // $(row).wrap("<div class='row'></div>");
-  //     row = [];
-  //   } else {
-  //     row.push(this);
-  //   }
-  //   postCount++;
-
-    // $(".project-box").each(function(index) {
-    //     console.log(index);
-    //   });
-    
-
-    // normalize desc height
     var maxHeight = 0;
 
     $(".project-box > .desc").each(function () {
@@ -101,9 +78,11 @@ if (Meteor.isClient) {
           }
         });
         if (tagCount == 0) {
-          $(this).hide();
+          $(this).parents('.post').removeClass('bounceInUp');
+          $(this).parents('.post').addClass('bounceOutDown');
         } else {
-          $(this).show();
+          $(this).parents('.post').removeClass('bounceOutDown')
+          $(this).parents('.post').addClass('bounceInUp');
         }
         tagCount = 0;
       });
@@ -116,22 +95,25 @@ if (Meteor.isClient) {
       $(event.target).addClass('selected');
       if ($(event.target).text() == "All") {
         $(".project-box").each(function () {
-          $(this).show();
+          $(this).parents('.post').removeClass('bounceOutDown')
+          $(this).parents('.post').addClass('bounceInUp');
         });
       } else {
-        var count = 0;
+        var tagCount = 0;
         $(".project-box").each(function () {
           $(this).children(".meta").children(".tag").each(function (index, elem) {
             if($(event.target).text() == $(elem).text()) {
-              count += 1;
+              tagCount += 1;
             }
           });
-          if (count == 0) {
-            $(this).hide();
+          if (tagCount == 0) {
+            $(this).parents('.post').removeClass('bounceInUp');
+            $(this).parents('.post').addClass('bounceOutDown');
           } else {
-            $(this).show();
+            $(this).parents('.post').removeClass('bounceOutDown')
+            $(this).parents('.post').addClass('bounceInUp');
           }
-          count = 0;
+          tagCount = 0;
         });
       }
     }
@@ -143,25 +125,59 @@ if (Meteor.isClient) {
         return false;
       });
 
+      // $("#hire-kk").hover(function(event) {
+      //   $(this).addClass('animated pulse');
+      // }, function(event) {
+      //   $(this).removeClass('animated pulse');
+      // });
+
       var smallHeaderHeight = parseInt($(".small-header").css("height"));
       var smallHeaderTop = $(".small-header").offset().top;
+      var sticky;
 
       $(window).scroll(function() {
-        if($(window).scrollTop() > $(".small-header").offset().top) {
+        if(!sticky && $(window).scrollTop() > $(".small-header").offset().top) {
           $(".small-header").addClass('sticky');
-          $(".h1").removeClass("hidden").addClass("shown");
+          $(".h1").removeClass("transparent").addClass("opaque").addClass("expand");
           // TODO: animate instead of hiding abruptly
           $(".content").css({ paddingTop: smallHeaderHeight + 40 + "px" });
-        } else if ($(window).scrollTop() <= smallHeaderTop) {
+          sticky = true;
+        } else if (sticky && $(window).scrollTop() <= smallHeaderTop) {
           $(".small-header").removeClass('sticky');
           $(".content").css({ paddingTop: "40px" });
-          $(".h1").removeClass("shown").addClass("hidden");
+          $(".h1").removeClass("opaque").addClass("transparent").removeClass("expand");
+          sticky = false;
         }
       });
 
       $(window).resize(function () {
         // moreDropdown();
       });
+  });
+
+  Handlebars.registerHelper('iterate', function(context, limit, options) {
+      var ret = "";
+      console.log(context.length);
+      if (context.length > 0) {
+          ret += "<div>";
+          for(var i=0, j=context.length; i<j; i++) {
+            ret = ret + options.fn(context[i]);
+            if ( (i+1) % limit === 0 ) {
+                ret += "</div><div>";
+            }
+          }
+          ret += "</div>";
+      }
+      return ret;
+  });
+
+
+  Handlebars.registerHelper("eachpost", function(optionalValue) { 
+    var that = this;
+    
+      $(".post[data-id=" + that.post_id +"]").removeClass('hidden');
+      $(".post[data-id=" + that.post_id +"]").addClass('animated bounceInUp');
+    
   });
 
   Handlebars.registerHelper('forevery', function(context, limit, options) {
