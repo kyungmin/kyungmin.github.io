@@ -1,8 +1,13 @@
 Posts = new Meteor.Collection("posts");
+SocialLinks = new Meteor.Collection("social_links");
 
 if (Meteor.isClient) {
 
   Session.setDefault('post_id', 0);
+
+  Template.social_links.links = function () {
+    return SocialLinks.find({});
+  };
 
   Template.posts.posts = function () {
     return Posts.find({});
@@ -10,6 +15,10 @@ if (Meteor.isClient) {
 
   Template.posts.first_item = function () {
     return this.post_id % 3 == 0;
+  };
+
+  Template.posts.github_present = function () {
+    return this.github ? true : false;
   };
 
   Template.posts.rendered = function () {
@@ -121,94 +130,45 @@ if (Meteor.isClient) {
   });
 
   Meteor.startup(function () {
-      $(".small-header > .h1").click(function(event) {
-        $("html, body").animate({scrollTop: 0}, "slow");
-        return false;
-      });
+    $(".small-header > .h1").click(function(event) {
+      $("html, body").animate({scrollTop: 0}, "slow");
+      return false;
+    });
 
-      var smallHeaderHeight = parseInt($(".small-header").css("height"));
-      var smallHeaderTop = $(".small-header").offset().top;
-      var sticky;
+    var smallHeaderHeight = parseInt($(".small-header").css("height"));
+    var smallHeaderTop = $(".small-header").offset().top;
+    var sticky;
 
-      $(window).scroll(function() {
-        if(!sticky && $(window).scrollTop() > $(".small-header").offset().top) {
-          $(".small-header").addClass('sticky');
-          $(".h1").removeClass("transparent").addClass("opaque").addClass("expand");
-          $(".content").css({ paddingTop: smallHeaderHeight + 40 + "px" });
-          sticky = true;
-        } else if (sticky && $(window).scrollTop() <= smallHeaderTop) {
-          $(".small-header").removeClass('sticky');
-          $(".content").css({ paddingTop: "40px" });
-          $(".h1").removeClass("opaque").addClass("transparent").removeClass("expand");
-          sticky = false;
-        }
-      });
-  });
-
-  Handlebars.registerHelper('iterate', function(context, limit, options) {
-      var ret = "";
-      console.log(context.length);
-      if (context.length > 0) {
-          ret += "<div>";
-          for(var i=0, j=context.length; i<j; i++) {
-            ret = ret + options.fn(context[i]);
-            if ( (i+1) % limit === 0 ) {
-                ret += "</div><div>";
-            }
-          }
-          ret += "</div>";
+    $(window).scroll(function() {
+      if(!sticky && $(window).scrollTop() > $(".small-header").offset().top) {
+        $(".small-header").addClass('sticky');
+        $(".h1").removeClass("transparent").addClass("opaque").addClass("expand");
+        $(".content").css({ paddingTop: smallHeaderHeight + 40 + "px" });
+        sticky = true;
+      } else if (sticky && $(window).scrollTop() <= smallHeaderTop) {
+        $(".small-header").removeClass('sticky');
+        $(".content").css({ paddingTop: "40px" });
+        $(".h1").removeClass("opaque").addClass("transparent").removeClass("expand");
+        sticky = false;
       }
-      return ret;
-  });
-
-
-  Handlebars.registerHelper("eachpost", function(optionalValue) { 
-    var that = this;
-    
-      $(".post[data-id=" + that.post_id +"]").removeClass('hidden');
-      $(".post[data-id=" + that.post_id +"]").addClass('animated bounceInUp');
-    
-  });
-
-  Handlebars.registerHelper('forevery', function(context, limit, options) {
-      var ret = "";
-      debugger
-      console.log(context.length);
-      if (context.length > 0) {
-          ret += "<div>";
-          for(var i=0, j=context.length; i<j; i++) {
-            ret = ret + options.fn(context[i]);
-            if ( (i+1) % limit === 0 ) {
-                ret += "</div><div>";
-            }
-          }
-          ret += "</div>";
-      }
-      return ret;
+    });
   });
 }
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
     Posts.remove({});
+    SocialLinks.remove({});
+
     if (Posts.find().count() === 0) {
-      var data = [
+      var posts = [
         {
           title: "Passwordlet",
           url: "http://www.passwordlet.com",
           img: "images/passwordlet.png",
-          desc: "Final project at App Academy for 2 weeks. Passwordlet securely stores user credentials and automatically logs in users with cookies.",
+          desc: "Passwordlet securely stores user credentials and automatically logs users in using cookies.",
           github: "https://github.com/kyungmin/passwordlet",
-          tags: ["Ruby on Rails", "Backbone", "jQuery"],
-          date: "Nov 13, 2013"
-        },
-        {
-          title: "99Cats",
-          url: "https://github.com/kyungmin/NinetyNineCats-v2",
-          img: "http://placekitten.com/300/300",
-          desc: "Full Rails application with multiple associations. 99Cats lets users make reservations on cat rentals.",
-          github: "https://github.com/kyungmin/NinetyNineCats-v2",
-          tags: ["Ruby on Rails"],
+          tags: ["Ruby on Rails", "Backbone.js", "jQuery", "CSS"],
           date: "Nov 13, 2013"
         },
         {
@@ -217,7 +177,7 @@ if (Meteor.isServer) {
           img: "images/snake.png",
           desc: "Object-oriented JavaScript game with HTML and CSS.",
           github: "https://github.com/kyungmin/snake",
-          tags: ["JavaScript"],
+          tags: ["JavaScript", "CSS"],
           date: "Oct 24, 2013"
         },
         {
@@ -237,21 +197,64 @@ if (Meteor.isServer) {
           github: "https://github.com/kyungmin/chess",
           tags: ["Ruby"],
           date: "Sep 24, 2013"
+        },
+        {
+          title: "Governance Toolkit",
+          url: "http://goo.gl/gJplG",
+          img: "images/governance-toolkit.png",
+          desc: "Prototype to demonstrate an idea to represent complex dataset.",
+          tags: ["jQuery", "CSS"],
+          date: "Sep 24, 2011"
         }
       ];
 
-      for(var i = 0; i < data.length; i++) {
+      var links = [
+        {
+          name: "linkedin",
+          link: "http://www.linkedin.com/in/kyungmink"
+        },
+        {
+          name: "github",
+          link: "https://github.com/kyungmin"
+        },
+        {
+          name: "tumblr",
+          link: "http://app-academy-kyungmin.tumblr.com"
+        },
+        {
+          name: "medium",
+          link: "https://medium.com/@kyungmink"
+        },
+        {
+          name: "instagram",
+          link: "http://instagram.com/kyungminkk"
+        },
+        {
+          name: "twitter",
+          link: "https://twitter.com/kyungmink"
+        }
+      ];
+
+      for(var i = 0; i < posts.length; i++) {
         Posts.insert({
           post_id: i,
-          title: data[i].title,
-          url: data[i].url,
-          img: data[i].img,
-          desc: data[i].desc,
-          github: data[i].github,
-          tags: data[i].tags,
-          date: data[i].date
+          title: posts[i].title,
+          url: posts[i].url,
+          img: posts[i].img,
+          desc: posts[i].desc,
+          github: posts[i].github,
+          tags: posts[i].tags,
+          date: posts[i].date
         });
       }
+
+      for(var i = 0; i < links.length; i++) {
+        SocialLinks.insert({
+          name: links[i].name,
+          link: links[i].link
+        });
+      }
+ 
     }
   });
 }

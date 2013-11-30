@@ -7,15 +7,10 @@
   <div class="big-header">
     <div class="intro-box animated fadeIn">
       <h1>Kyungmin Kim</h1>
-      <p>Hi, I'm KK. I live in San Francisco. Previously, I was a UX designer at Google for almost 4 years, focusing on enterprise products like DoubleClick and Google Cloud Console. Now I build apps with Ruby on Rails and JavaScript.</p>
+      <p>Hi, I'm KK. I live in San Francisco. I build apps with Ruby on Rails and JavaScript. Previously, I was a UX designer at Google for almost 4 years, focusing on enterprise products like DoubleClick and Google Cloud Console.</p>
     </div>
     <div class="social">
-      <a href="http://www.linkedin.com/in/kyungmink" target="_blank"><div class="social-icon linkedin"></div></a>
-      <a href="https://github.com/kyungmin" target="_blank"><div class="social-icon github"></div></a>
-      <a href="http://app-academy-kyungmin.tumblr.com" target="_blank"><div class="social-icon tumblr"></div></a>
-      <a href="https://medium.com/@kyungmink" target="_blank"><div class="social-icon medium"></div></a>
-      <a href="http://instagram.com/kyungminkk" target="_blank"><div class="social-icon instagram"></div></a>
-      <a href="https://twitter.com/kyungmink" target="_blank"><div class="social-icon twitter"></div></a>
+      {{> social_links}}
     </div>
   </div>
   <div class="small-header">
@@ -28,9 +23,15 @@
    {{> posts}}
   </div>
   <div class="footer">
-   Kyungmin Kim © 2013. Made with <a href="http://www.meteor.com">Meteor</a> and stored in <a href="https://github.com/kyungmin/kyungm.in" target="_blank">Github</a>.
+   Kyungmin Kim © 2013. Made with <a href="http://www.meteor.com">Meteor</a> and available in <a href="https://github.com/kyungmin/kyungm.in" target="_blank">Github</a>.
   </div>
 </body>
+
+<template name="social_links">
+  {{#each links}}
+    <a href="{{link}}" target="_blank"><div class="social-icon {{name}}"></div></a>
+  {{/each}}
+</template>
 
 <template name="posts">
 {{#each posts}}
@@ -41,7 +42,10 @@
     <div class="project-box">
       <a href="{{url}}" target="_blank"><img class="img" src="{{img}}"></img></a>
       <h2>{{title}}</h2>
-      <p class="desc">{{desc}}<a class="github-link" target="_blank" href="{{github}}">Github</a></p>
+      <p class="desc">{{desc}}
+      {{#if github_present}}
+        <a class="github-link" target="_blank" href="{{github}}">Github</a></p>
+      {{/if}}
       <div class="meta">
         <div class="tags">{{> tags}}</div>
         <span class="date">{{date}}</span>
