@@ -93,7 +93,7 @@ if (Meteor.isClient) {
     'click .tag' : function (event) {
       $(".tags_menu > .tag").removeClass('selected');
       $(event.target).addClass('selected');
-      
+
       if ($(event.target).text() == "All") {
         $(".project-box").each(function () {
           $(this).parents('.post').removeClass('bounceOutDown');
@@ -126,12 +126,6 @@ if (Meteor.isClient) {
         return false;
       });
 
-      // $("#hire-kk").hover(function(event) {
-      //   $(this).addClass('animated pulse');
-      // }, function(event) {
-      //   $(this).removeClass('animated pulse');
-      // });
-
       var smallHeaderHeight = parseInt($(".small-header").css("height"));
       var smallHeaderTop = $(".small-header").offset().top;
       var sticky;
@@ -140,7 +134,6 @@ if (Meteor.isClient) {
         if(!sticky && $(window).scrollTop() > $(".small-header").offset().top) {
           $(".small-header").addClass('sticky');
           $(".h1").removeClass("transparent").addClass("opaque").addClass("expand");
-          // TODO: animate instead of hiding abruptly
           $(".content").css({ paddingTop: smallHeaderHeight + 40 + "px" });
           sticky = true;
         } else if (sticky && $(window).scrollTop() <= smallHeaderTop) {
@@ -149,10 +142,6 @@ if (Meteor.isClient) {
           $(".h1").removeClass("opaque").addClass("transparent").removeClass("expand");
           sticky = false;
         }
-      });
-
-      $(window).resize(function () {
-        // moreDropdown();
       });
   });
 
