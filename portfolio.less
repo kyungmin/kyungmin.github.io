@@ -137,7 +137,7 @@ body {
 .social {
   margin: 0px auto 30px;
   align: center;
-  width: 375px;
+  width: 380px;
 }
 
 .social-icon {
@@ -145,10 +145,8 @@ body {
   width: 60px;
   height: 60px;
   margin: 0;
-  background-color: darken(@dark-red, 5%);
   
   &:hover {
-    background-color: darken(@dark-red, 10%);
     cursor: pointer;
     .float(500ms, ease-out, alternate, infinite);    
   }
@@ -166,8 +164,12 @@ body {
 
 .medium {
   background-image: url('icons/medium.png');
+
+  &:hover {
+    background-image: url('icons/medium-hover.png');
+  }
   
-  &:hover:after{
+  &:hover:after {
     content: "Medium";
   }
 }
@@ -175,7 +177,11 @@ body {
 .linkedin {
   background-image: url('icons/linkedin.png');
   
-  &:hover:after{
+  &:hover {
+    background-image: url('icons/linkedin-hover.png');
+  }
+
+  &:hover:after {
     content: "LinkedIn";
   }
 }
@@ -183,15 +189,23 @@ body {
 .twitter {
   background-image: url('icons/twitter.png');
   
-  &:hover:after{
+  &:hover {
+    background-image: url('icons/twitter-hover.png');
+  }
+  
+  &:hover:after {
     content: "Twitter";
   }
 }
 
 .github {
   background-image: url('icons/github.png');
+
+  &:hover {
+    background-image: url('icons/github-hover.png');
+  }
   
-  &:hover:after{
+  &:hover:after {
     content: "Github";
   }
 }
@@ -199,7 +213,11 @@ body {
 .tumblr {
   background-image: url('icons/tumblr.png');
   
-  &:hover:after{
+  &:hover {
+    background-image: url('icons/tumblr-hover.png');
+  }
+
+  &:hover:after {
     content: "Tumblr";
   }
 }
@@ -207,7 +225,11 @@ body {
 .instagram {
   background-image: url('icons/instagram.png');
   
-  &:hover:after{
+  &:hover {
+    background-image: url('icons/instagram-hover.png');
+  }
+
+  &:hover:after {
     content: "Instagram";
   }
 }
