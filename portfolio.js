@@ -5,10 +5,6 @@ if (Meteor.isClient) {
 
   Session.setDefault('post_id', 0);
 
-  Template.social_links.links = function () {
-    return SocialLinks.find({});
-  };
-
   Template.posts.posts = function () {
     return Posts.find({});
   };
@@ -164,18 +160,18 @@ if (Meteor.isServer) {
       var posts = [
         {
           title: "Balanced Dashboard",
-          url: "http://dashboard.balancedpayments.com/",
+          url: "http://dashboard.balancedpayments.com",
           img: "images/balanced-dashboard.png",
-          desc: "Balanced Dashboard visualizes complex funds flow for marketplace owners.",
+          desc: "Revamped the dashboard to visualize complex funds flows for marketplace owners.",
           github: "https://github.com/balanced/balanced-dashboard",
-          tags: ["Ember.js", "Handlebars", "Less", "UX Design", "Product"],
+          tags: ["Ember.js", "Handlebars", "Less", "Grunt", "UX Design", "Product"],
           date: "Jan 2014 – Feb 2015"
         },
         {
           title: "Google Cloud Console",
           url: "https://console.developers.google.com",
           img: "images/cloud-console.png",
-          desc: "Redesigned App Engine APIs Console for the initial Google Cloud Console UI.",
+          desc: "Converted App Engine and APIs Console into the new Google Cloud Console UI.",
           tags: ["UX Design"],
           date: "May 2012 – Aug 2013"
         },
@@ -183,36 +179,17 @@ if (Meteor.isServer) {
           title: "DoubleClick for Advertisers",
           url: "http://goo.gl/gJplG",
           img: "images/doubleclick.png",
-          desc: "Redesigned a complex ad trafficking workflows – batch editing, custom filtering, etc.",
+          desc: "Redesigned the UI to support complex ad trafficking workflows – batch editing, custom filtering, etc.",
           tags: ["UX Design"],
           date: "Jan 2010 – May 2012"
-        }
-      ];
-
-      var links = [
-        {
-          name: "linkedin",
-          link: "http://www.linkedin.com/in/kyungmink"
         },
         {
-          name: "github",
-          link: "https://github.com/kyungmin"
-        },
-        {
-          name: "tumblr",
-          link: "http://app-academy-kyungmin.tumblr.com"
-        },
-        {
-          name: "medium",
-          link: "https://medium.com/@kyungmink"
-        },
-        {
-          name: "instagram",
-          link: "http://instagram.com/kyungminkk"
-        },
-        {
-          name: "twitter",
-          link: "https://twitter.com/kyungmink"
+          title: "Medium Blog",
+          url: "https://medium.com/@kyungmink/latest",
+          img: "images/medium.png",
+          desc: "Where I write about my career adventures and thoughts on design.",
+          tags: ["Writing"],
+          date: "Jul 2013 – Present"
         }
       ];
 
@@ -228,14 +205,6 @@ if (Meteor.isServer) {
           date: posts[i].date
         });
       }
-
-      for(var i = 0; i < links.length; i++) {
-        SocialLinks.insert({
-          name: links[i].name,
-          link: links[i].link
-        });
-      }
-
     }
   });
 }

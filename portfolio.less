@@ -1,8 +1,8 @@
 @import "packages/bootstrap3-less/bootstrap.lessimport";
 @import "animate.lessimport";
 
-@light-red: #FF6767;
-@dark-red: #DF5050;
+@light-red: #F17555;
+@dark-red: #EC4E33;
 @light-grey: #f6f6f6;
 @blue: #15c;
 @title-font: 'Roboto Slab', serif;
@@ -83,44 +83,16 @@ body {
   z-index: 99;
 }
 
-#hire-kk {
-  position: fixed;
-  right: -54px;
-  top: 16px;
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  background-color: #f9f9f9;
-  overflow: hidden;
-  color: #444;
-  margin: 5px 0;
-  padding: 8px 70px;
-  text-align: center;
-  font-weight: 600;
-  display: block;
-  border: 2px solid @dark-red;
-  box-shadow: 0 2px 0px @dark-red;
-  text-shadow: 0px 0px 3px #f7f7f7;
-  z-index: 100;
-}
-
-#hire-kk:hover {
-  cursor: pointer;
-  background-color: #fff;
-  color: #333;
-}
-
 .intro-box {
   width: 50%;
   min-width: 375px;
   margin: 60px auto 30px;
   padding: 40px 50px;
-  background-color: @dark-red;
-  box-shadow: 0 4px 0 darken(@dark-red, 5%);
 
   & h1 {
     font-family: @title-font;
     font-size: 28px;
-    text-shadow: 0px 1px 0px #888;
+    text-shadow: 0px 1px 0px #9196A1;
     margin-bottom: 40px;
     text-align: center;
     line-height: 0;
@@ -129,108 +101,16 @@ body {
   & p {
     line-height: 1.8;
     font-size: 16px;
-    text-align: center;
     font-weight: 100;
   }
-}
 
-.social {
-  margin: 0px auto 30px;
-  align: center;
-  width: 380px;
-}
+  & a {
+    color: #FFF;
+    text-decoration: underline;
 
-.social-icon {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  margin: 0;
-  
-  &:hover {
-    cursor: pointer;
-    .float(500ms, ease-out, alternate, infinite);    
-  }
-
-  &:hover:after {
-    font-family: @title-font;
-    color: darken(@dark-red, 15%);
-    position: absolute;
-    text-align: center;
-    font-size: 11px;
-    width: 60px;
-    margin: 56px auto 0;
-  }
-}
-
-.medium {
-  background-image: url('icons/medium.png');
-
-  &:hover {
-    background-image: url('icons/medium-hover.png');
-  }
-  
-  &:hover:after {
-    content: "Medium";
-  }
-}
-
-.linkedin {
-  background-image: url('icons/linkedin.png');
-  
-  &:hover {
-    background-image: url('icons/linkedin-hover.png');
-  }
-
-  &:hover:after {
-    content: "LinkedIn";
-  }
-}
-
-.twitter {
-  background-image: url('icons/twitter.png');
-  
-  &:hover {
-    background-image: url('icons/twitter-hover.png');
-  }
-  
-  &:hover:after {
-    content: "Twitter";
-  }
-}
-
-.github {
-  background-image: url('icons/github.png');
-
-  &:hover {
-    background-image: url('icons/github-hover.png');
-  }
-  
-  &:hover:after {
-    content: "Github";
-  }
-}
-
-.tumblr {
-  background-image: url('icons/tumblr.png');
-  
-  &:hover {
-    background-image: url('icons/tumblr-hover.png');
-  }
-
-  &:hover:after {
-    content: "Tumblr";
-  }
-}
-
-.instagram {
-  background-image: url('icons/instagram.png');
-  
-  &:hover {
-    background-image: url('icons/instagram-hover.png');
-  }
-
-  &:hover:after {
-    content: "Instagram";
+    &:hover {
+      color: #FFF;
+    }
   }
 }
 
