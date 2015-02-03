@@ -177,7 +177,7 @@ if (Meteor.isServer) {
         },
         {
           title: "DoubleClick for Advertisers",
-          url: "http://goo.gl/gJplG",
+          url: "http://www.google.com/doubleclick/advertisers",
           img: "images/doubleclick.png",
           desc: "Redesigned the UI to support complex ad trafficking workflows – batch editing, custom filtering, etc.",
           tags: ["UX Design"],
