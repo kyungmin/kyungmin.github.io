@@ -26,7 +26,7 @@ if (Meteor.isClient) {
 
     $(".project-box > .desc").each(function () {
       if ($(this).height() > maxHeight) {
-        maxHeight = $(this).height(); 
+        maxHeight = $(this).height();
       }
     });
 
@@ -163,48 +163,29 @@ if (Meteor.isServer) {
     if (Posts.find().count() === 0) {
       var posts = [
         {
-          title: "Passwordlet",
-          url: "http://www.passwordlet.com",
-          img: "images/passwordlet.png",
-          desc: "Passwordlet securely stores user credentials and automatically logs users in using cookies.",
-          github: "https://github.com/kyungmin/passwordlet",
-          tags: ["Ruby on Rails", "Backbone.js", "jQuery", "CSS"],
-          date: "Nov 13, 2013"
+          title: "Balanced Dashboard",
+          url: "http://dashboard.balancedpayments.com/",
+          img: "images/balanced-dashboard.png",
+          desc: "Balanced Dashboard visualizes complex funds flow for marketplace owners.",
+          github: "https://github.com/balanced/balanced-dashboard",
+          tags: ["Ember.js", "Handlebars", "Less", "UX Design", "Product"],
+          date: "Jan 2014 – Feb 2015"
         },
         {
-          title: "Snake",
-          url: "http://goo.gl/oCcvkc",
-          img: "images/snake.png",
-          desc: "Object-oriented JavaScript game with HTML and CSS.",
-          github: "https://github.com/kyungmin/snake",
-          tags: ["JavaScript", "CSS"],
-          date: "Oct 24, 2013"
+          title: "Google Cloud Console",
+          url: "https://console.developers.google.com",
+          img: "images/cloud-console.png",
+          desc: "Redesigned App Engine APIs Console for the initial Google Cloud Console UI.",
+          tags: ["UX Design"],
+          date: "May 2012 – Aug 2013"
         },
         {
-          title: "Asteroids",
-          url: "http://goo.gl/WJwyDI",
-          img: "images/asteroids.png",
-          desc: "Object-oriented JavaScript game rendered on HTML5 canvas.",
-          github: "https://github.com/kyungmin/asteroids",
-          tags: ["JavaScript", "Canvas"],
-          date: "Oct 23, 2013"
-        },
-        {
-          title: "Command Line Chess",
-          url: "http://www.passwordlet.com",
-          img: "images/chess.jpg",
-          desc: "Command line chess program in Ruby.",
-          github: "https://github.com/kyungmin/chess",
-          tags: ["Ruby"],
-          date: "Sep 24, 2013"
-        },
-        {
-          title: "Governance Toolkit",
+          title: "DoubleClick for Advertisers",
           url: "http://goo.gl/gJplG",
-          img: "images/governance-toolkit.png",
-          desc: "A prototype to demonstrate how to visualize complex governance dataset.",
-          tags: ["jQuery", "CSS"],
-          date: "Jan 10, 2012"
+          img: "images/doubleclick.png",
+          desc: "Redesigned a complex ad trafficking workflows – batch editing, custom filtering, etc.",
+          tags: ["UX Design"],
+          date: "Jan 2010 – May 2012"
         }
       ];
 
@@ -254,7 +235,7 @@ if (Meteor.isServer) {
           link: links[i].link
         });
       }
- 
+
     }
   });
 }
