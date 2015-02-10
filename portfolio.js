@@ -159,12 +159,30 @@ if (Meteor.isServer) {
     if (Posts.find().count() === 0) {
       var posts = [
         {
+          title: "Balanced Style Guide",
+          url: "http://blog.balancedpayments.com/strapped/",
+          img: "images/balanced-strapped.png",
+          desc: "Initiated and implemented the interactive style guide project from scratch.",
+          github: "http://github.com/balanced/strapped",
+          tags: ["Handlebars", "Less"],
+          date: "Jan 2014 – Feb 2015"
+        },
+        {
+          title: "Balanced Homepage",
+          url: "https://www.balancedpayments.com/international-payments",
+          img: "images/balanced-website.png",
+          desc: "Lead the design implementation of the Balanced homepage.",
+          github: "http://github.com/balanced/www.balancedpayments.com",
+          tags: ["UX Design", "Animation", "Less"],
+          date: "Jan 2014 – Feb 2015"
+        },
+        {
           title: "Balanced Dashboard",
           url: "http://dashboard.balancedpayments.com",
           img: "images/balanced-dashboard.png",
-          desc: "Revamped the dashboard to visualize complex funds flows for marketplace owners.",
+          desc: "Guided the dashboard design revamp. Maintained a large-scale Ember.js application.",
           github: "https://github.com/balanced/balanced-dashboard",
-          tags: ["Ember.js", "Handlebars", "Less", "Grunt", "UX Design", "Product"],
+          tags: ["Ember.js", "UX Design", "Handlebars", "Less"],
           date: "Jan 2014 – Feb 2015"
         },
         {
