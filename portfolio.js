@@ -160,7 +160,7 @@ if (Meteor.isServer) {
       var posts = [
         {
           title: "iOS Animation",
-          url: "http://blog.balancedpayments.com/strapped/",
+          url: "https://github.com/kyungmin/codepath-week1-carousel",
           img: "images/carousel-ios.gif",
           desc: "Taking iOS for Designers class by CodePath to learn iOS animations.",
           github: "https://github.com/kyungmin/codepath-week1-carousel",
@@ -220,7 +220,7 @@ if (Meteor.isServer) {
         },
         {
           title: "Fluency",
-          url: "https://medium.com/@kyungmink/latest",
+          url: "http://hciresearch4.hcii.cs.cmu.edu/M-HCI/2009/Salesforce/index.html",
           img: "images/fluency.png",
           desc: "User research, design, and prototyping for the capstone project at CMU.",
           tags: ["UX design"],
