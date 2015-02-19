@@ -222,7 +222,7 @@ if (Meteor.isServer) {
           title: "Fluency",
           url: "http://hciresearch4.hcii.cs.cmu.edu/M-HCI/2009/Salesforce/index.html",
           img: "images/fluency.png",
-          desc: "User research, design, and prototyping for the capstone project at CMU.",
+          desc: "User research, design, and prototyping for the project with Salesforce at Carnegie Mellon.",
           tags: ["UX design"],
           date: "Jan – Aug 2009"
         },
