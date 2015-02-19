@@ -159,13 +159,22 @@ if (Meteor.isServer) {
     if (Posts.find().count() === 0) {
       var posts = [
         {
+          title: "iOS Animation",
+          url: "http://blog.balancedpayments.com/strapped/",
+          img: "images/carousel-ios.gif",
+          desc: "Taking iOS for Designers class by CodePath to learn iOS animations.",
+          github: "https://github.com/kyungmin/codepath-week1-carousel",
+          tags: ["Animation", "Mobile"],
+          date: "Jan – Mar 2015"
+        },
+        {
           title: "Balanced Style Guide",
           url: "http://blog.balancedpayments.com/strapped/",
           img: "images/balanced-strapped.png",
           desc: "Initiated and implemented the interactive style guide project from scratch.",
           github: "http://github.com/balanced/strapped",
           tags: ["Handlebars", "Less"],
-          date: "Jan 2014 – Feb 2015"
+          date: "Jan 2014 – Present"
         },
         {
           title: "Balanced Homepage",
@@ -174,7 +183,7 @@ if (Meteor.isServer) {
           desc: "Lead the design implementation of the Balanced homepage.",
           github: "http://github.com/balanced/www.balancedpayments.com",
           tags: ["UX Design", "Animation", "Less"],
-          date: "Jan 2014 – Feb 2015"
+          date: "Jan 2014 – Present"
         },
         {
           title: "Balanced Dashboard",
@@ -183,7 +192,15 @@ if (Meteor.isServer) {
           desc: "Guided the dashboard design revamp. Maintained a large-scale Ember.js application.",
           github: "https://github.com/balanced/balanced-dashboard",
           tags: ["Ember.js", "UX Design", "Handlebars", "Less"],
-          date: "Jan 2014 – Feb 2015"
+          date: "Jan 2014 – Present"
+        },
+        {
+          title: "Medium Blog",
+          url: "https://medium.com/@kyungmink/latest",
+          img: "images/medium.png",
+          desc: "Where I write about my career adventures and thoughts on design.",
+          tags: ["Writing"],
+          date: "Jul 2013 – Present"
         },
         {
           title: "Google Cloud Console",
@@ -202,13 +219,13 @@ if (Meteor.isServer) {
           date: "Jan 2010 – May 2012"
         },
         {
-          title: "Medium Blog",
+          title: "Fluency",
           url: "https://medium.com/@kyungmink/latest",
-          img: "images/medium.png",
-          desc: "Where I write about my career adventures and thoughts on design.",
-          tags: ["Writing"],
-          date: "Jul 2013 – Present"
-        }
+          img: "images/fluency.png",
+          desc: "User research, design, and prototyping for the capstone project at CMU.",
+          tags: ["UX design"],
+          date: "Jan – Aug 2009"
+        },
       ];
 
       for(var i = 0; i < posts.length; i++) {
