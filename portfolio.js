@@ -5,17 +5,19 @@ if (Meteor.isClient) {
 
   Session.setDefault('post_id', 0);
 
-  Template.posts.posts = function () {
-    return Posts.find({});
-  };
+  Template.posts.helpers({
+    posts: function () {
+      return Posts.find({});
+    },
 
-  Template.posts.first_item = function () {
-    return this.post_id % 3 == 0;
-  };
+    first_item: function () {
+      return this.post_id % 3 == 0;
+    },
 
-  Template.posts.github_present = function () {
-    return this.github ? true : false;
-  };
+    github_present: function () {
+      return this.github ? true : false;
+    }
+  });
 
   Template.posts.rendered = function () {
     var maxHeight = 0;
@@ -31,42 +33,30 @@ if (Meteor.isClient) {
     });
   };
 
-  Template.tags.tags = function () {
-    var post_id = this._id;
-    return _.map(this.tags || [], function (tag) {
-      return { post_id: post_id, tag: tag };
-    });
-  };
-
-  Template.tags_menu.tags = function () {
-    var tags = [];
-
-    Posts.find({}).forEach(function (post) {
-      _.each(post.tags, function (tag) {
-        var tag_exists = _.find(tags, function (t) {
-          return t.tag === tag;
-        });
-        if (!tag_exists) {
-          tags.push({tag: tag});
-        }
+  Template.tags.helpers({
+    tags: function () {
+      var post_id = this._id;
+      return _.map(this.tags || [], function (tag) {
+        return { post_id: post_id, tag: tag };
       });
-    });
-    return tags;
-  };
+    }
+  });
 
-  Template.tags_menu.rendered = function () {
-    var menuWidth = 0;
+  Template.tags_menu.helpers({
+    tags: function () {
+      var tags = [];
 
-    $(".tags_menu > .tag").each(function () {
-      menuWidth += parseInt($(this).css("width"));
-    });
-    $(".tags_menu").width(menuWidth);
-    $(".tags_menu").css("margin", "0 auto");
-  };
-
-  Template.posts.events({
-    'click .img' : function () {
-      console.log(this);
+      Posts.find({}).forEach(function (post) {
+        _.each(post.tags, function (tag) {
+          var tag_exists = _.find(tags, function (t) {
+            return t.tag === tag;
+          });
+          if (!tag_exists) {
+            tags.push({tag: tag});
+          }
+        });
+      });
+      return tags;
     }
   });
 
