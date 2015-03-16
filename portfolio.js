@@ -125,6 +125,12 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.ga.helpers({
+    gaKey: function () {
+      return Meteor.settings.public.ga.account;
+    }
+  });
+
   Meteor.startup(function () {
     $(".small-header > .h1").click(function(event) {
       $("html, body").animate({scrollTop: 0}, "slow");

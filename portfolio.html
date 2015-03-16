@@ -24,6 +24,8 @@
   <div class="footer">
    Kyungmin Kim © 2015. Made with <a href="http://www.meteor.com">Meteor</a> and available in <a href="https://github.com/kyungmin/kyungm.in" target="_blank">Github</a>.
   </div>
+
+  {{> ga}}
 </body>
 
 <template name="posts">
@@ -33,12 +35,14 @@
   {{/if}}
   <div class="post animated bounceInUp col-md-4 col-sm-12 col-xs-12" data-id="{{post_id}}">
     <div class="project-box">
-      <a href="{{url}}" target="_blank"><img class="img" src="{{img}}"></img></a>
+      <a href="{{url}}" target="_blank"><img class="img" src="{{img}}" /></a>
       <h2>{{title}}</h2>
-      <p class="desc">{{desc}}
-      {{#if github_present}}
-        <a class="github-link" target="_blank" href="{{github}}">Github</a></p>
-      {{/if}}
+      <p class="desc">
+        {{desc}}
+        {{#if github_present}}
+          <a class="github-link" target="_blank" href="{{github}}">Github</a>
+        {{/if}}
+      </p>
       <div class="meta">
         <div class="tags">{{> tags}}</div>
         <span class="date">{{date}}</span>
@@ -60,4 +64,16 @@
 {{#each tags}}
   <div class="tag">{{tag}}</div>
 {{/each}}
+</template>
+
+<template name="ga">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '{{gaKey}}', 'auto');
+    ga('send', 'pageview');
+  </script>
 </template>
