@@ -23,7 +23,7 @@
     "img": "images/balanced-strapped.png",
     "desc": "Initiated and implemented the interactive style guide project from scratch.",
     "github": "http://github.com/balanced/strapped",
-    "tags": ["Handlebars", "Less"],
+    "tags": ["JavaScript"],
     "date": "Jan 2014 – Present"
   },
   {
@@ -41,7 +41,7 @@
     "img": "images/balanced-dashboard.png",
     "desc": "Guided the dashboard design revamp. Maintained a large-scale Ember.js application.",
     "github": "https://github.com/balanced/balanced-dashboard",
-    "tags": ["Ember.js", "UX Design", "Handlebars", "Less"],
+    "tags": ["UX Design", "JavaScript"],
     "date": "Jan 2014 – Present"
   },
   {
@@ -58,6 +58,7 @@
     "img": "images/cloud-console.png",
     "desc": "Converted App Engine and APIs Console into the new Google Cloud Console UI.",
     "tags": ["UX Design"],
+    "links": ["http://goo.gl/Ze39Rz", "http://goo.gl/ildzAG"],
     "date": "May 2012 – Aug 2013"
   },
   {
@@ -65,6 +66,7 @@
     "url": "http://www.google.com/doubleclick/advertisers",
     "img": "images/doubleclick.png",
     "desc": "Redesigned the UI to support complex ad trafficking workflows – batch editing, custom filtering, etc.",
+    "links": ["http://goo.gl/G7M05Z"],
     "tags": ["UX Design"],
     "date": "Jan 2010 – May 2012"
   },
@@ -73,7 +75,7 @@
     "url": "http://hciresearch4.hcii.cs.cmu.edu/M-HCI/2009/Salesforce/index.html",
     "img": "images/fluency.png",
     "desc": "User research, design, and prototyping for the project with Salesforce at Carnegie Mellon.",
-    "tags": ["UX design"],
+    "tags": ["UX Design"],
     "date": "Jan – Aug 2009"
   }]
 }

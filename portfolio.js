@@ -163,6 +163,7 @@ if (Meteor.isServer) {
           img: posts[i].img,
           desc: posts[i].desc,
           github: posts[i].github,
+          links: posts[i].links,
           tags: posts[i].tags,
           date: posts[i].date
         });
