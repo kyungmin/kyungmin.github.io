@@ -1,0 +1,79 @@
+{
+  "posts": [{
+    "title": "Scramble",
+    "url": "http://scramblewithkk.meteor.com",
+    "img": "images/scramble.png",
+    "desc": "A simple JavaScript word scramble game with a touch of design and animation",
+    "github": "https://github.com/kyungmin/scramble",
+    "tags": ["Animation", "JavaScript"],
+    "date": "Mar 2015"
+  },
+  {
+    "title": "iOS Animation",
+    "url": "https://github.com/kyungmin/codepath-week1-carousel",
+    "img": "images/carousel-ios.gif",
+    "desc": "Taking iOS for Designers class by CodePath to learn iOS animations.",
+    "github": "https://github.com/kyungmin/codepath-week1-carousel",
+    "tags": ["Animation", "Mobile"],
+    "date": "Jan – Mar 2015"
+  },
+  {
+    "title": "Balanced Style Guide",
+    "url": "http://blog.balancedpayments.com/strapped/",
+    "img": "images/balanced-strapped.png",
+    "desc": "Initiated and implemented the interactive style guide project from scratch.",
+    "github": "http://github.com/balanced/strapped",
+    "tags": ["Handlebars", "Less"],
+    "date": "Jan 2014 – Present"
+  },
+  {
+    "title": "Balanced Homepage",
+    "url": "https://www.balancedpayments.com/international-payments",
+    "img": "images/balanced-website.png",
+    "desc": "Lead the design implementation of the Balanced homepage.",
+    "github": "http://github.com/balanced/www.balancedpayments.com",
+    "tags": ["UX Design", "Animation", "Less"],
+    "date": "Jan 2014 – Present"
+  },
+  {
+    "title": "Balanced Dashboard",
+    "url": "http://dashboard.balancedpayments.com",
+    "img": "images/balanced-dashboard.png",
+    "desc": "Guided the dashboard design revamp. Maintained a large-scale Ember.js application.",
+    "github": "https://github.com/balanced/balanced-dashboard",
+    "tags": ["Ember.js", "UX Design", "Handlebars", "Less"],
+    "date": "Jan 2014 – Present"
+  },
+  {
+    "title": "Medium Blog",
+    "url": "https://medium.com/@kyungmink/latest",
+    "img": "images/medium.png",
+    "desc": "Where I write about my career adventures and thoughts on design.",
+    "tags": ["Writing"],
+    "date": "Jul 2013 – Present"
+  },
+  {
+    "title": "Google Cloud Console",
+    "url": "https://console.developers.google.com",
+    "img": "images/cloud-console.png",
+    "desc": "Converted App Engine and APIs Console into the new Google Cloud Console UI.",
+    "tags": ["UX Design"],
+    "date": "May 2012 – Aug 2013"
+  },
+  {
+    "title": "DoubleClick for Advertisers",
+    "url": "http://www.google.com/doubleclick/advertisers",
+    "img": "images/doubleclick.png",
+    "desc": "Redesigned the UI to support complex ad trafficking workflows – batch editing, custom filtering, etc.",
+    "tags": ["UX Design"],
+    "date": "Jan 2010 – May 2012"
+  },
+  {
+    "title": "Fluency",
+    "url": "http://hciresearch4.hcii.cs.cmu.edu/M-HCI/2009/Salesforce/index.html",
+    "img": "images/fluency.png",
+    "desc": "User research, design, and prototyping for the project with Salesforce at Carnegie Mellon.",
+    "tags": ["UX design"],
+    "date": "Jan – Aug 2009"
+  }]
+}
