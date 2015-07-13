@@ -6,7 +6,6 @@
 insecure
 standard-app-packages
 less
-bootstrap3-less
 underscore
 backbone
 jquery

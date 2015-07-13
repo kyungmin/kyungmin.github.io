@@ -45,6 +45,7 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+  animation-duration: 2s;
 }
 
 @-webkit-keyframes bounceInUp {

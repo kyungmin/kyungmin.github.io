@@ -1,25 +1,24 @@
 <head>
   <link rel="icon" sizes="16x16 32x32" href="/favicon.ico">
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  <script src="//use.typekit.net/vxz2kyt.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
   <title>Kyungmin Kim</title>
 </head>
 
-<body>
-  <div class="big-header">
-    <div class="intro-box animated fadeIn">
-      <h1>Kyungmin Kim</h1>
-      <p>Hi, I'm Kyungmin, currently a front-end engineer at Balanced. Previously, a UX designer at Google redesigning DoubleClick for Advertisers and Google Cloud Console.</p>
-      <p>When I'm not coding or designing, I like <a href="http://www.strava.com/athletes/1421121" target="_blank">cycling</a>, <a href="http://instagram.com/kyungminkk" target="_blank">photographing</a>, and <a href="https://kyungmin.exposure.co/yosemite" target="_blank">traveling</a>. Feel free to contact me via <a href="http://www.linkedin.com/in/kyungmink">LinkedIn</a>.</p>
-    </div>
-  </div>
-  <div class="small-header">
-    <div class="h1 transparent">Kyungmin Kim</div>
-    <div class="tags_menu">
-      {{> tags_menu}}
-    </div>
-  </div>
-  <div class="content">
-   {{> posts}}
+<body class="tk-ff-basic-gothic-web-pro">
+  <div class="animated fadeIn">
+    <h1>Kyungmin Kim</h1>
+    <p>Designer, cyclist based in San Francisco</p>
+    <p>I currently work at <a href="http://www.premise.com" target="_blank">Premise</a>, helping the global economy to become more transparent with the mobile technology and data science. Previously, I worked at Google and Balanced.</p>
+    <p>I grew up in Korea and have a huge love for spicy food and k-pop. I’m a minimalist, practical, and goal-oriented.</p>
+    <p>I have a passion for design-led product development process. I believe great design can be achieved via any medium, not just Adobe Creative Suite or Sketch. I design, code, write, and initiate things to continue pushing the boundary of a designer.</p>
+    <p>
+      <a href="http://www.linkedin.com/in/kyungmink">LinkedIn</a> •
+      <a href="https://medium.com/@kyungmink" target="_blank">Medium</a> •
+      <a href="http://instagram.com/kyungminkk" target="_blank">Instagram</a> •
+      <a href="http://www.strava.com/athletes/1421121" target="_blank">Strava</a>
+    </p>
+
   </div>
   <div class="footer">
    Kyungmin Kim © 2015. Made with <a href="http://www.meteor.com">Meteor</a> and available in <a href="https://github.com/kyungmin/kyungm.in" target="_blank">Github</a>.
@@ -27,44 +26,6 @@
 
   {{> ga}}
 </body>
-
-<template name="posts">
-{{#each posts}}
-  {{#if first_item}}
-    <div class="row"></div>
-  {{/if}}
-  <div class="post animated bounceInUp col-md-4 col-sm-12 col-xs-12" data-id="{{post_id}}">
-    <div class="project-box">
-      <a href="{{url}}" target="_blank"><img class="img" src="{{img}}" /></a>
-      <h2>{{title}}</h2>
-      <p class="desc">
-        {{desc}}
-        {{#if github_present}}
-          <a class="github-link" target="_blank" href="{{github}}">Github</a>
-        {{/if}}
-      </p>
-      <div class="meta">
-        <div class="tags">{{> tags}}</div>
-        <span class="date">{{date}}</span>
-      </div>
-    </div>
-  </div>
-
-{{/each}}
-</template>
-
-<template name="tags">
-{{#each tags}}
-  <span class="tag">{{tag}}</span>
-{{/each}}
-</template>
-
-<template name="tags_menu">
-  <span class="tag selected">All</span>
-  {{#each tags}}
-    <span class="tag">{{tag}}</span>
-  {{/each}}
-</template>
 
 <template name="ga">
   <script>
