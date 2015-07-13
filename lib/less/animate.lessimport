@@ -48,7 +48,7 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
   animation-duration: 2s;
 }
 
-@-webkit-keyframes bounceInUp {
+@-webkit-keyframes bounceIn {
 	0% {
 		opacity: 0.2;
 		-webkit-transform: translateY(1px) scale(0.9);
@@ -64,69 +64,31 @@ body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
 	}
 }
 
-@keyframes bounceInUp {
+@keyframes bounceIn {
   0% {
     opacity: 0.2;
-    transform: translateY(1px) scale(0.9);
+    transform: scale(0.9);
   }
 
-  40% {
-    opacity: 1;
-    transform: translateY(-2px);
+  50% {
+    transform: scale(1.02);
   }
 
   100% {
-    transform: translateY(0);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-.animated.bounceInUp {
-	-webkit-animation-name: bounceInUp;
-	animation-name: bounceInUp;
+.animated.bounceIn {
+	-webkit-animation-name: bounceIn;
+	animation-name: bounceIn;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
 }
 
-@-webkit-keyframes bounceOutDown {
-	0% {
-		-webkit-transform: translateY(0);
-	}
-
-	20% {
-		opacity: 1;
-		-webkit-transform: translateY(-5px);
-	}
-	100% {
-    opacity: 0.3;
-    -webkit-transform: translateY(100px);
-
-		-webkit-transform: translateY(0) scale(0.9);
-	}
-}
-
-@keyframes bounceOutDown {
-	0% {
-		transform: translateY(0);
-	}
-
-	20% {
-		opacity: 1;
-		transform: translateY(-5px);
-	}
-  80% {
-    opacity: 0.2;
-    transform: translateY(500px);
-  }
-	100% {
-    opacity: 0.2;
-		transform: translateY(0);
-	}
-}
-
-.animated.bounceOutDown {
-	-webkit-animation-name: bounceOutDown;
-	-moz-animation-name: bounceOutDown;
-	-o-animation-name: bounceOutDown;
-	animation-name: bounceOutDown;
-}
 
 @-webkit-keyframes float {
   from {
