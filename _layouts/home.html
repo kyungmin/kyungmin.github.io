@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <div class="animated bounceIn photo"></div>
+  <div class="animated fadeIn">
+    <h1>Kyungmin Kim</h1>
+    <p>Designer, cyclist based in San Francisco</p>
+    <p>I currently work at <a href="http://www.premise.com" target="_blank">Premise</a>, helping the global economy to become more transparent with the mobile technology and data science. Previously, I worked at Google and Balanced.</p>
+    <p>I grew up in Korea and have a huge love for spicy food and k-pop. I’m a minimalist, practical, and goal-oriented.</p>
+    <p>I have a passion for design-led product development process. I believe, with the right process, anyone can influence great design, not just those who can use Adobe Creative Suite or Sketch. I design, code, write, and create things to continue to expand my role as a designer. I'm open to opportunities to advise or mentor designers.</p>
+    <p>
+      <a href="http://www.linkedin.com/in/kyungmink">LinkedIn</a> •
+      <a href="https://twitter.com/kyungmink">Twitter</a> •
+      <a href="https://medium.com/@kyungmink">Medium</a> •
+      <a href="http://instagram.com/kyungminkk">Instagram</a> •
+      <a href="http://www.strava.com/athletes/1421121">Strava</a>
+    </p>
+  </div>
+  <div class="footer">
+   © 2016 Kyungmin Kim. Powered by <a href="https://github.com/kyungmin/kyungm.in" target="_blank">Github</a>.
+  </div>
+
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+
+</div>
