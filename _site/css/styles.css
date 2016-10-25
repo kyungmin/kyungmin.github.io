@@ -17,7 +17,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 16px/1.5 "Roboto-Regular", Helvetica, Arial, sans-serif;
   color: #888;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -94,10 +94,10 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #2a7ae2;
+  color: #49B5E8;
   text-decoration: none; }
   a:hover {
-    color: #1756a9;
+    color: #1a92cb;
     text-decoration: none; }
 
 /**
