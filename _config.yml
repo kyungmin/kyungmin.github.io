@@ -17,7 +17,7 @@ title: Kyungmin Kim
 email: kmin905@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Kyungmin's portfolio site
-baseurl: "/kyungm.in" # the subpath of your site, e.g. /blog
+baseurl: "/kyungmin" # the subpath of your site, e.g. /blog
 url: "http://kyungmin.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kyungmink
 github_username:  kyungmin
