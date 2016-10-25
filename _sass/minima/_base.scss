@@ -15,7 +15,7 @@ dl, dd, ol, ul, figure {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
+  color: $grey;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
@@ -44,13 +44,10 @@ ul, ol, dl, figure,
 }
 
 h1 {
-  font-family: inherit;
-  text-transform: uppercase;
-  font-size: 26px;
-  letter-spacing: 2px;
+  font-family: $bold-font-family;
+  font-size: 28px;
   margin-left: 15%;
   color: $dark-grey;
-  font-weight: 100;
 }
 
 p {
@@ -59,7 +56,7 @@ p {
   line-height: 28px;
 
   &:first-of-type {
-    color: $grey;
+    color: $dark-grey;
     margin-bottom: 40px;
   }
   &:last-of-type {
@@ -123,13 +120,9 @@ a {
   color: $brand-color;
   text-decoration: none;
 
-  &:visited {
-    color: darken($brand-color, 15%);
-  }
-
   &:hover {
-    color: $text-color;
-    text-decoration: underline;
+    color: darken($brand-color, 15%);
+    text-decoration: none;
   }
 }
 
@@ -231,16 +224,16 @@ pre {
  * Custom
  */
 .photo {
-  background-image: url('images/profile.png');
+  background-image: url('../images/profile.png');
   width: 100px;
   height: 100px;
   background-size: contain;
   float: left;
-  margin-left: 2.5%;
+  margin-left: -4%;
 }
 .footer {
   padding-top: 40px;
-  font-size: 13px;
+  font-size: 14px;
   color: $grey;
   margin-left: 15%;
   margin-bottom: 10%;

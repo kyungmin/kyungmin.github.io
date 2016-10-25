@@ -1,6 +1,9 @@
 @font-face {
-  font-family: 'Roboto-Light';
-  src: url("../fonts/Roboto-Light.ttf"); }
+  font-family: 'Roboto-Regular';
+  src: url("../fonts/Roboto-Regular.ttf"); }
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url("../fonts/Roboto-Medium.ttf"); }
 /**
  * Reset some basic elements
  */
@@ -15,7 +18,7 @@ dl, dd, ol, ul, figure {
  */
 body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #111;
+  color: #888;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
@@ -40,20 +43,17 @@ ul, ol, dl, figure,
   margin-bottom: 15px; }
 
 h1 {
-  font-family: inherit;
-  text-transform: uppercase;
-  font-size: 26px;
-  letter-spacing: 2px;
+  font-family: "Roboto-Medium", Helvetica, Arial, sans-serif;
+  font-size: 28px;
   margin-left: 15%;
-  color: #333;
-  font-weight: 100; }
+  color: #333; }
 
 p {
   width: 70%;
   margin: 0 auto 20px;
   line-height: 28px; }
   p:first-of-type {
-    color: #888;
+    color: #333;
     margin-bottom: 40px; }
   p:last-of-type {
     color: #888; }
@@ -96,11 +96,9 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #2a7ae2;
   text-decoration: none; }
-  a:visited {
-    color: #1756a9; }
   a:hover {
-    color: #111;
-    text-decoration: underline; }
+    color: #1756a9;
+    text-decoration: none; }
 
 /**
  * Blockquotes
@@ -174,16 +172,16 @@ pre {
  * Custom
  */
 .photo {
-  background-image: url("images/profile.png");
+  background-image: url("../images/profile.png");
   width: 100px;
   height: 100px;
   background-size: contain;
   float: left;
-  margin-left: 2.5%; }
+  margin-left: -4%; }
 
 .footer {
   padding-top: 40px;
-  font-size: 13px;
+  font-size: 14px;
   color: #888;
   margin-left: 15%;
   margin-bottom: 10%; }
@@ -531,3 +529,67 @@ pre {
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+/* Modified by Kyungmin Kim */
+/*
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license
+
+Copyright (c) 2013 Daniel Eden
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+body {
+  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  animation-duration: 2s; }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translateY(1px) scale(0.9); }
+  40% {
+    opacity: 1;
+    -webkit-transform: translateY(-2px); }
+  100% {
+    -webkit-transform: translateY(0); } }
+@keyframes bounceIn {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.9); }
+  50% {
+    transform: scale(1.02); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+.animated.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms; }
