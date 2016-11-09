@@ -24,7 +24,6 @@ body {
           font-feature-settings: "kern" 1;
   font-kerning: normal;
   margin-top: -10px;
-  background-color: $light-grey;
   font-size: 16px;
   min-width: 300px;
   padding: 40px;
@@ -44,10 +43,10 @@ ul, ol, dl, figure,
 }
 
 h1 {
-  font-family: $bold-font-family;
   font-size: 28px;
   margin-left: 15%;
   color: $dark-grey;
+  font-weight: 500;
 }
 
 p {
@@ -56,7 +55,7 @@ p {
   line-height: 28px;
 
   &:first-of-type {
-    color: $dark-grey;
+    color: $medium-grey;
     margin-bottom: 40px;
   }
   &:last-of-type {
@@ -121,12 +120,23 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: darken($brand-color, 15%);
+    color: darken($brand-color, 10%);
     text-decoration: none;
   }
 }
 
+.btn {
+  background-color: $brand-color;
+  border-radius: 4px;
+  color: $white;
+  padding: 8px 14px;
+  font-weight: 500;
 
+  &:hover {
+    color: $white;
+    background-color: darken($brand-color, 10%);
+  }
+}
 
 /**
  * Blockquotes
@@ -224,12 +234,13 @@ pre {
  * Custom
  */
 .photo {
-  background-image: url('../images/profile.png');
-  width: 100px;
-  height: 100px;
+  background-image: url('../images/profile.jpg');
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
   background-size: contain;
   float: left;
-  margin-left: -4%;
+  margin-left: -6%;
 }
 .footer {
   padding-top: 40px;

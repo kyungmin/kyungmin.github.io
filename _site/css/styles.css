@@ -1,9 +1,5 @@
 @font-face {
-  font-family: 'Roboto-Regular';
-  src: url("../fonts/Roboto-Regular.ttf"); }
-@font-face {
-  font-family: 'Roboto-Medium';
-  src: url("../fonts/Roboto-Medium.ttf"); }
+  font-family: 'Work Sans', sans-serif; }
 /**
  * Reset some basic elements
  */
@@ -17,9 +13,9 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Roboto-Regular", Helvetica, Arial, sans-serif;
-  color: #888;
-  background-color: #fdfdfd;
+  font: 400 16px/1.5 "Work Sans", Helvetica, Arial, sans-serif;
+  color: #757575;
+  background-color: #FFFFFF;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -27,7 +23,6 @@ body {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   margin-top: -10px;
-  background-color: #f6f6f6;
   font-size: 16px;
   min-width: 300px;
   padding: 40px;
@@ -43,20 +38,20 @@ ul, ol, dl, figure,
   margin-bottom: 15px; }
 
 h1 {
-  font-family: "Roboto-Medium", Helvetica, Arial, sans-serif;
   font-size: 28px;
   margin-left: 15%;
-  color: #333; }
+  color: #4A4A4A;
+  font-weight: 500; }
 
 p {
   width: 70%;
   margin: 0 auto 20px;
   line-height: 28px; }
   p:first-of-type {
-    color: #333;
+    color: #999999;
     margin-bottom: 40px; }
   p:last-of-type {
-    color: #888; }
+    color: #757575; }
 
 /**
  * Images
@@ -94,11 +89,21 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #49B5E8;
+  color: #00acc1;
   text-decoration: none; }
   a:hover {
-    color: #1a92cb;
+    color: #007f8e;
     text-decoration: none; }
+
+.btn {
+  background-color: #00acc1;
+  border-radius: 4px;
+  color: #FFFFFF;
+  padding: 8px 14px;
+  font-weight: 500; }
+  .btn:hover {
+    color: #FFFFFF;
+    background-color: #007f8e; }
 
 /**
  * Blockquotes
@@ -172,17 +177,18 @@ pre {
  * Custom
  */
 .photo {
-  background-image: url("../images/profile.png");
-  width: 100px;
-  height: 100px;
+  background-image: url("../images/profile.jpg");
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
   background-size: contain;
   float: left;
-  margin-left: -4%; }
+  margin-left: -6%; }
 
 .footer {
   padding-top: 40px;
   font-size: 14px;
-  color: #888;
+  color: #757575;
   margin-left: 15%;
   margin-bottom: 10%; }
 
@@ -255,7 +261,7 @@ pre {
       position: absolute;
       top: 9px;
       right: 15px;
-      background-color: #fdfdfd;
+      background-color: #FFFFFF;
       border: 1px solid #e8e8e8;
       border-radius: 5px;
       text-align: right; }

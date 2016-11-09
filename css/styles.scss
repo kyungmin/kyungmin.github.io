@@ -3,18 +3,17 @@
 
 // Define defaults for each variable.
 @font-face {
-  font-family: 'Roboto-Regular';
-  src: url('../fonts/Roboto-Regular.ttf');
+  font-family: 'Work Sans', sans-serif;
 }
 
-@font-face {
-  font-family: 'Roboto-Medium';
-  src: url('../fonts/Roboto-Medium.ttf');
-}
+$white: #FFFFFF;
+$black: #000000;
+$light-grey: #f6f6f6;
+$grey: #757575;
+$dark-grey: #4A4A4A;
+$medium-grey: #999999;
 
-
-$base-font-family: "Roboto-Regular", Helvetica, Arial, sans-serif !default;
-$bold-font-family: "Roboto-Medium", Helvetica, Arial, sans-serif !default;
+$base-font-family: "Work Sans", Helvetica, Arial, sans-serif !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -23,8 +22,8 @@ $base-line-height: 1.5 !default;
 $spacing-unit:     30px !default;
 
 $text-color:       #111 !default;
-$background-color: #fdfdfd !default;
-$brand-color:      #49B5E8 !default;
+$background-color: $white !default;
+$brand-color:      #00acc1 !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -37,9 +36,6 @@ $on-palm:          600px !default;
 $on-laptop:        800px !default;
 
 
-$light-grey: #f6f6f6;
-$grey: #888;
-$dark-grey: #333;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
