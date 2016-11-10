@@ -31,4 +31,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
 sass:
-  sass_dir: css
+  sass_dir: public/css

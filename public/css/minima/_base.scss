@@ -27,7 +27,6 @@ body {
   font-size: 16px;
   min-width: 300px;
   padding: 40px;
-  margin-top: 5%;
 }
 
 
@@ -233,6 +232,18 @@ pre {
 /**
  * Custom
  */
+.attention-bar {
+  height: 60px;
+  line-height: 69px;
+  margin: -40px -40px 0 -40px;
+  border-bottom: 1px solid $light-grey;
+  background-color: $light-grey;
+  color: $dark-grey;
+  padding-left: 60px;
+  vertical-align: middle;
+  display: block;
+}
+
 .photo {
   background-image: url('../images/profile.jpg');
   width: 120px;
@@ -242,6 +253,7 @@ pre {
   float: left;
   margin-left: -6%;
 }
+
 .footer {
   padding-top: 40px;
   font-size: 14px;
@@ -271,15 +283,16 @@ pre {
  */
 @media (max-width: 992px) {
   body {
-    padding: 0;
-    padding-top: 5%;
+    padding-left: 0;
+    padding-right: 0;
   }
   .photo {
     float: none;
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     margin-left: 10%;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   h1 {
     margin-left: 10%;
