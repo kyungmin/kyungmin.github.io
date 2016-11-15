@@ -25,7 +25,8 @@ body {
   margin-top: -10px;
   font-size: 16px;
   min-width: 300px;
-  padding: 40px; }
+  padding: 40px;
+  letter-spacing: -0.01em; }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -39,8 +40,7 @@ ul, ol, dl, figure,
 h1 {
   font-size: 28px;
   margin-left: 15%;
-  color: #4A4A4A;
-  font-weight: 500; }
+  color: #4A4A4A; }
 
 p {
   width: 70%;
@@ -88,21 +88,21 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #00acc1;
+  color: #f4511e;
   text-decoration: none; }
   a:hover {
-    color: #007f8e;
+    color: #d53b0a;
     text-decoration: none; }
 
 .btn {
-  background-color: #00acc1;
+  background-color: #f4511e;
   border-radius: 4px;
   color: #FFFFFF;
   padding: 8px 14px;
   font-weight: 500; }
   .btn:hover {
     color: #FFFFFF;
-    background-color: #007f8e; }
+    background-color: #d53b0a; }
 
 /**
  * Blockquotes
