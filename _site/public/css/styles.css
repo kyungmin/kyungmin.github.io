@@ -40,6 +40,7 @@ ul, ol, dl, figure,
 h1 {
   font-size: 28px;
   margin-left: 15%;
+  margin-bottom: 5px;
   color: #4A4A4A; }
 
 p {
@@ -95,14 +96,13 @@ a {
     text-decoration: none; }
 
 .btn {
-  background-color: #f4511e;
-  border-radius: 4px;
-  color: #FFFFFF;
+  color: #f4511e;
+  border: 2px solid #f88967;
   padding: 8px 14px;
   font-weight: 500; }
   .btn:hover {
-    color: #FFFFFF;
-    background-color: #d53b0a; }
+    color: #f4511e;
+    border-color: #f4511e; }
 
 /**
  * Blockquotes
@@ -187,13 +187,14 @@ pre {
   display: block; }
 
 .photo {
-  background-image: url("../images/profile.jpg");
-  width: 120px;
-  height: 120px;
+  background-image: url("../images/profile.png");
+  width: 200px;
+  height: 200px;
   border-radius: 100%;
   background-size: contain;
   float: left;
-  margin-left: -6%; }
+  margin-left: -20%;
+  margin-top: 11px; }
 
 .footer {
   padding-top: 40px;
@@ -224,8 +225,8 @@ pre {
 
   .photo {
     float: none;
-    width: 90px;
-    height: 90px;
+    width: 160px;
+    height: 160px;
     margin-left: 10%;
     margin-top: 20px;
     margin-bottom: 20px; }

@@ -45,6 +45,7 @@ ul, ol, dl, figure,
 h1 {
   font-size: 28px;
   margin-left: 15%;
+  margin-bottom: 5px;
   color: $dark-grey;
 }
 
@@ -125,15 +126,14 @@ a {
 }
 
 .btn {
-  background-color: $brand-color;
-  border-radius: 4px;
-  color: $white;
+  color: $brand-color;
+  border: 2px solid lighten($brand-color, 15%);
   padding: 8px 14px;
   font-weight: 500;
 
   &:hover {
-    color: $white;
-    background-color: darken($brand-color, 10%);
+    color: $brand-color;
+    border-color: $brand-color;
   }
 }
 
@@ -245,13 +245,14 @@ pre {
 }
 
 .photo {
-  background-image: url('../images/profile.jpg');
-  width: 120px;
-  height: 120px;
+  background-image: url('../images/profile.png');
+  width: 200px;
+  height: 200px;
   border-radius: 100%;
   background-size: contain;
   float: left;
-  margin-left: -6%;
+  margin-left: -20%;
+  margin-top: 11px;
 }
 
 .footer {
@@ -288,8 +289,8 @@ pre {
   }
   .photo {
     float: none;
-    width: 90px;
-    height: 90px;
+    width: 160px;
+    height: 160px;
     margin-left: 10%;
     margin-top: 20px;
     margin-bottom: 20px;
