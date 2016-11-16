@@ -227,18 +227,25 @@ pre {
     float: none;
     width: 160px;
     height: 160px;
-    margin-left: 10%;
-    margin-top: 20px;
+    margin: 0 auto;
     margin-bottom: 20px; }
 
   h1 {
-    margin-left: 10%; }
+    text-align: center;
+    margin-left: 0; }
 
   p {
     width: 80%; }
+    p:first-of-type, p:last-of-type {
+      text-align: center; }
+
+  .btn {
+    display: block;
+    text-align: center; }
 
   .footer {
-    margin-left: 10%; } }
+    margin-left: 0;
+    text-align: center; } }
 /**
  * Site header
  */
