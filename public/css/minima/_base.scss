@@ -91,7 +91,10 @@ figcaption {
  * Lists
  */
 ul, ol {
-  margin-left: $spacing-unit;
+  padding-left: 30px;
+  width: 70%;
+  margin: -20px auto 20px;
+  line-height: 28px;  
 }
 
 li {
