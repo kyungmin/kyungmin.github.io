@@ -15,7 +15,7 @@ dl, dd, ol, ul, figure {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $grey;
+  color: $dark-grey;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
@@ -55,11 +55,11 @@ p {
   line-height: 28px;
 
   &:first-of-type {
-    color: $medium-grey;
+    color: $grey;
     margin-bottom: 40px;
   }
   &:last-of-type {
-    color: $grey;
+    color: $dark-grey;
   }
 }
 
